@@ -18,7 +18,7 @@
 
 
 <p align="center">
-  <img src="figures/fig1.jpg" alt="">
+  <img src="model.svg" alt="">
   <br>
   <b>Figure 1</b>: Overall Architecture of Diffusion-TS.
 </p>
