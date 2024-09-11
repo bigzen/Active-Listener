@@ -64,3 +64,23 @@ Follow the instructions within the notebook `stats.ipynb` to compute the evaluat
   <br>
   <b>Figure 2</b>: Visualisation of Active Listener model's generated output.
 </p>
+
+## Authors
+
+* Paper Authors : Bishal Ghosh, Emma Li, Tanaya Guha
+
+* Code Author : Bishal Ghosh
+
+* Contact : b[dot]ghosh[dot]1[at]research[dot]gla[dot]ac[dot]uk
+
+
+## Citation
+If you find this repo useful, please cite our paper via
+```bibtex
+@article{------,
+  title={Active Listener: Continuous Generation Of Listener’s Head Motion Response In Dyadic Interactions},
+  author={Ghosh, Bishal and Li, Emma  and Guha, Tanaya},
+  journal={arXiv preprint arXiv:----.-----},
+  year={2024}
+}
+```
