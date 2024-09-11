@@ -20,7 +20,7 @@
 <p align="center">
   <img src="model.svg" alt="">
   <br>
-  <b>Figure 1</b>: Overall Architecture of Diffusion-TS.
+  <b>Figure 1</b>: Overall Architecture of GNN Active Listener model.
 </p>
 
 ## Running the Code
@@ -56,6 +56,11 @@ Follow the instructions within the notebook `stats.ipynb` to compute the evaluat
 <p align="center">
   <img src="table.png" alt="">
   <br>
-  <b>Figure 1</b>: Overall Architecture of Diffusion-TS.
+  <b>Table 1</b>: Performance of our proposed generalised (subject-independent) head motion response generation model for different feature sets. The results are presented in terms of MAE (mean ±standard deviation) across 5-fold cross validation. The speed indicates end-to-end generation speed in terms of fps.
 </p>
 
+<p align="center">
+  <img src="vis.png" alt="">
+  <br>
+  <b>Figure 2</b>: Visualisation of Active Listener model's generated output.
+</p>
