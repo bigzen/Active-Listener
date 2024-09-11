@@ -22,3 +22,32 @@
   <br>
   <b>Figure 1</b>: Overall Architecture of Diffusion-TS.
 </p>
+
+## Dataset Preparation
+
+The IEMOCAP dataset can be obtained from [USC](https://sail.usc.edu/iemocap/iemocap_release.htm). Once obtained store the dataset to the folder `./IEMOCAP_full_release` in the same parent directory as our repository. Copy the files inside the data folder to the Dataset directory.
+
+
+## Running the Code
+
+ The code requires conda3 (or miniconda3), and one CUDA capable GPU. The instructions below guide you regarding running the codes in this repository. 
+
+### Environment & Libraries
+
+The full libraries list is provided as a `requirements.txt` in this repo. Please create a virtual environment with `conda` or `venv` and run
+
+~~~bash
+(myenv) $ pip install -r requirements.txt
+~~~
+
+### Training & Sampling
+
+For training, you can reproduce the experimental results of all benchmarks by runing
+
+~~~bash
+(myenv) $ python main.py --name {name} --config_file {config.yaml} --gpu 0 --train
+~~~
+
+**Note:** We also provided the corresponding `.yml` files (only stocks, sines, mujoco, etth, energy and fmri) under the folder `./Config` where all possible option can be altered. You may need to change some parameters in the model for different scenarios. For example, we use the whole data to train model for unconditional evaluation, then *training_ratio* is set to 1 by default. As for conditional generation, we need to divide data set thus it should be changed to a value < 1. 
+
+While training, the script will save check points to the *results* folder after a fixed number of epochs. Once trained, please use the saved model for sampling by running
