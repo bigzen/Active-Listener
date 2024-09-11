@@ -23,31 +23,39 @@
   <b>Figure 1</b>: Overall Architecture of Diffusion-TS.
 </p>
 
-## Dataset Preparation
-
-The IEMOCAP dataset can be obtained from [USC](https://sail.usc.edu/iemocap/iemocap_release.htm). Once obtained store the dataset to the folder `./IEMOCAP_full_release` in the same parent directory as our repository. Copy the files inside the data folder to the Dataset directory.
-
-
 ## Running the Code
 
  The code requires conda3 (or miniconda3), and one CUDA capable GPU. The instructions below guide you regarding running the codes in this repository. 
 
 ### Environment & Libraries
 
-The full libraries list is provided as a `requirements.txt` in this repo. Please create a virtual environment with `conda` or `venv` and run
+The full libraries list is provided as a `back.yml` in this repo. To create a virtual environment with requirements in `conda` run
 
 ~~~bash
-(myenv) $ pip install -r requirements.txt
+(myenv) $ conda env create -f back.yml
 ~~~
+
+### Dataset Preparation
+
+The IEMOCAP dataset can be obtained from [USC](https://sail.usc.edu/iemocap/iemocap_release.htm). Once obtained store the dataset to the folder `./IEMOCAP_full_release` in the same parent directory as our repository. Copy the files inside the data folder to the Dataset directory.
+
+Use the `process_data.ipynb` notebook to process the raw audio files, extract required features and save them in pickle (.pkl) format. Follow the instructions within the notebook to process and create various dataloaders for GNN/LSTM models with different features. 
 
 ### Training & Sampling
 
-For training, you can reproduce the experimental results of all benchmarks by runing
+The notebooks are designed to perform 5-fold cross-validation and save the outputs of all the 5 validation sets.
 
-~~~bash
-(myenv) $ python main.py --name {name} --config_file {config.yaml} --gpu 0 --train
-~~~
+Follow the instructions within the notebook `LSTM.ipynb` to train the LSTM model and save the outputs of validation sets.
 
-**Note:** We also provided the corresponding `.yml` files (only stocks, sines, mujoco, etth, energy and fmri) under the folder `./Config` where all possible option can be altered. You may need to change some parameters in the model for different scenarios. For example, we use the whole data to train model for unconditional evaluation, then *training_ratio* is set to 1 by default. As for conditional generation, we need to divide data set thus it should be changed to a value < 1. 
+Follow the instructions within the notebook `graph.ipynb` to train the GNN model and save the outputs of validation sets.
 
-While training, the script will save check points to the *results* folder after a fixed number of epochs. Once trained, please use the saved model for sampling by running
+### Results and Statistics
+
+Follow the instructions within the notebook `stats.ipynb` to compute the evaluation metrics on the saved data. It computes the metric for all outputs saved in results directory. This also outputs the resulting table in `.tex` format.
+
+<p align="center">
+  <img src="table.png" alt="">
+  <br>
+  <b>Figure 1</b>: Overall Architecture of Diffusion-TS.
+</p>
+
