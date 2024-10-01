@@ -77,10 +77,13 @@ Follow the instructions within the notebook `stats.ipynb` to compute the evaluat
 ## Citation
 If you find this repo useful, please cite our paper via
 ```bibtex
-@article{------,
-  title={Active Listener: Continuous Generation Of Listener’s Head Motion Response In Dyadic Interactions},
-  author={Ghosh, Bishal and Li, Emma  and Guha, Tanaya},
-  journal={arXiv preprint arXiv:----.-----},
-  year={2024}
+@misc{ghosh2024activelistenercontinuousgeneration,
+      title={Active Listener: Continuous Generation of Listener's Head Motion Response in Dyadic Interactions}, 
+      author={Bishal Ghosh and Emma Li and Tanaya Guha},
+      year={2024},
+      eprint={2409.20188},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2409.20188}, 
 }
 ```
